@@ -19,8 +19,7 @@ module.exports = {
             );
         },
         function (session, results) {
-            var selection = results.response.entity;
-            
+            var selection = results.response.entity;            
             switch (selection) {
                 case 'Rooms Types':
                     var roomTypes = getRoomTypesAttachments();
@@ -28,7 +27,8 @@ module.exports = {
                         .attachmentLayout(builder.AttachmentLayout.carousel)
                         .attachments(roomTypes);
                     session.send(reply);
-                    return session.endDialog();
+                    //return session.endDialog();
+                    session.beginDialog('/start');
                 case 'See all promotions':
                     var promotions = getPromotionsAttachments();
                     var reply = new builder.Message(session)
@@ -39,11 +39,8 @@ module.exports = {
                 case 'Other':
                     return session.beginDialog('enquiries');
                 case 'Back':
-                    return session.beginDialog('/'); //TODO: to start onDefault of root dialog
-                    
-            }
-            
-            
+                    return session.beginDialog('/start'); //TODO: to start onDefault of root dialog
+            }           
         }
     ]
 };
