@@ -116,7 +116,7 @@ bot.dialog('/', new builder.IntentDialog()
             // prompt option
             builder.Prompts.choice(
                 session,
-                "greetings_response",
+                'greetings_response',
                 //'What can we help you with today? Please tap on one of the buttons below. Swipe right for more options.',
                 [RoomReservations.Label, TheatreShows.Label, Employment.Label, SRLMembership.Label],
                 {
