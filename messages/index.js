@@ -69,10 +69,13 @@ bot.dialog('/', new builder.IntentDialog()
     ])
     .onDefault([
         function (session) {
+            console.log('Step1');
             if(session.message.text.trim().toUpperCase() === 'START'){
+                console.log('Step2');
                 session.beginDialog('/start');
             }
             else {
+                console.log('Step3');
                 var welcomeCard = new builder.HeroCard(session)
                 .title('Warmest greetings!')
                 .text('We are happy to assist you with any enquiry! Please tap "Start" to begin')
