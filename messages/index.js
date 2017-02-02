@@ -85,7 +85,8 @@ bot.dialog('/', new builder.IntentDialog()
                         .alt('MBS')
                 ])
                 .buttons([
-                    builder.CardAction.imBack(session, 'Start', 'Start'), 
+                    builder.CardAction.imBack(session, 'EN', 'English'), 
+                    builder.CardAction.imBack(session, 'CN', '中文'),
                 ]);
 
                 session.send(new builder.Message(session)
