@@ -17,8 +17,22 @@ module.exports = {
             );
         },
         function (session, results) {
-            session.send('Please send your resume/CV to recruitment@marinabaysands.com stating the position you are interested in. Kindly note that only shortlisted candidates will be contacted. Thank you.');
-            return session.endDialog();
+            //session.send('Please send your resume/CV to recruitment@marinabaysands.com stating the position you are interested in. Kindly note that only shortlisted candidates will be contacted. Thank you.');
+            //return session.endDialog();
+            builder.Prompts.choice(
+                session,
+                'Please send your resume/CV to recruitment@marinabaysands.com stating the position you are interested in. Kindly note that only shortlisted candidates will be contacted. Thank you.',
+                ['Home'],
+                {
+                    maxRetries: 3,
+                    retryPrompt: 'Not a valid option',
+                    listStyle: builder.ListStyle.button
+                }
+            );
         },
+        function (session, results) {
+            session.endDialog();
+            return session.beginDialog('/start');
+        }
     ]
 }
