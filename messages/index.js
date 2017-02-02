@@ -81,7 +81,7 @@ bot.dialog('/', new builder.IntentDialog()
                 .text('We are happy to assist you with any enquiry! Please tap "Start" to begin')
                 .images([
                     new builder.CardImage(session)
-                        .url('http://www.thetraveller.sg/wp-content/uploads/2014/01/marina_bay_sands_logo.jpg')
+                        .url('http://logos-download.com/wp-content/uploads/2016/05/Marina_Bay_Sands_logo_small.png')
                         .alt('MBS')
                 ])
                 .buttons([
