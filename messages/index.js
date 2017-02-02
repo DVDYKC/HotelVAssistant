@@ -121,9 +121,10 @@ bot.dialog('/', new builder.IntentDialog()
     bot.dialog('/start',[
         function (session) {
             // prompt option
+            var options = session.localizer.gettext(session.preferredLocale(), "greetings_response");
             builder.Prompts.choice(
                 session,
-                'greetings_response',
+                options,
                 //'What can we help you with today? Please tap on one of the buttons below. Swipe right for more options.',
                 [RoomReservations.Label, TheatreShows.Label, Employment.Label, SRLMembership.Label],
                 {
