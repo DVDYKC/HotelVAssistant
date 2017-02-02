@@ -82,12 +82,13 @@ bot.dialog('/', new builder.IntentDialog()
                     if (!err) {
                         // Locale files loaded
                         session.endDialog('locale_updated');
+                        session.beginDialog('/start');
                     } else {
                         // Problem loading the selected locale
                         session.error(err);
                     }
                 });
-                session.beginDialog('/start');
+                
             }
             else {
                 console.log('Step3');
