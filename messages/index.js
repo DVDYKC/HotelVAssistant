@@ -69,7 +69,7 @@ bot.dialog('/', new builder.IntentDialog()
     ])
     .onDefault([
         function (session) {
-            if(session.message.text.trim().toUpperCase() === MainOptions.Shop.toUpperCase()){
+            if(session.message.text.trim().toUpperCase() === 'START'){
                 session.beginDialog('/start');
             }
             else {
