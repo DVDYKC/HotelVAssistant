@@ -88,7 +88,7 @@ bot.dialog('/', new builder.IntentDialog()
                 session.preferredLocale(locale, function (err) {
                     if (!err) {
                         // Locale files loaded
-                        session.endDialog(locale);
+                        session.endDialog();
                         session.beginDialog('/start');
                     } else {
                         // Problem loading the selected locale
