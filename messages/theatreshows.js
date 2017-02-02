@@ -40,7 +40,7 @@ function getShowsAttachments(session) {
             .subtitle('Murder, greed, corruption, exploitation, adultery and treachery.')
             .text('')
             .images([
-                builder.CardImage.create(session, 'https://db.com.sg/wp-content/uploads/2016/01/Marina-Bay-Sands-Theatre-Image-01-400x300.jpg')
+                builder.CardImage.create(session, 'http://entertainment.marinabaysands.com/sistic/images/events/10949/1473738360028.jpg')
             ])
             .buttons([
                 builder.CardAction.openUrl(session, 'https://ticketing.marinabaysands.com/MBSWebApp/Booking.do?contentCode=chicago0217#', 'Book Tickets'),
@@ -52,7 +52,7 @@ function getShowsAttachments(session) {
             .subtitle('A weekend of exhilirating music performances by Grammy Award winning artistes!')
             .text('')
             .images([
-                builder.CardImage.create(session, 'https://db.com.sg/wp-content/uploads/2016/01/Marina-Bay-Sands-Theatre-Image-01-400x300.jpg')
+                builder.CardImage.create(session, 'http://entertainment.marinabaysands.com/sistic/images/events/11030/1483928033331.jpg')
             ])
             .buttons([
                 builder.CardAction.openUrl(session, 'https://ticketing.marinabaysands.com/MBSWebApp/Booking.do?contentCode=sing0417', 'Book Tickets'),
@@ -64,7 +64,7 @@ function getShowsAttachments(session) {
             .subtitle('Sylvia, by A.R. Gurney, is a modern romantic comedy about a marriage and a dog.')
             .text('')
             .images([
-                builder.CardImage.create(session, 'https://db.com.sg/wp-content/uploads/2016/01/Marina-Bay-Sands-Theatre-Image-01-400x300.jpg')
+                builder.CardImage.create(session, 'http://entertainment.marinabaysands.com/sistic/images/events/11034/1485144515703.jpg')
             ])
             .buttons([
                 builder.CardAction.openUrl(session, 'https://ticketing.marinabaysands.com/MBSWebApp/Booking.do?contentCode=sylvia0117', 'Book Tickets'),
