@@ -69,12 +69,12 @@ bot.dialog('/', new builder.IntentDialog()
     ])
     .onDefault([
         function (session) {
-            /*console.log('Step1');
-            if(session.message.text.trim().toUpperCase() === "START"){
+            console.log('Step1');
+            if(session.message.text.trim().toUpperCase() == 'START'){
                 console.log('Step2');
                 session.beginDialog('/start');
             }
-            else {*/
+            else {
                 console.log('Step3');
                 var welcomeCard = new builder.HeroCard(session)
                 .title('Warmest greetings!')
@@ -91,7 +91,7 @@ bot.dialog('/', new builder.IntentDialog()
                 session.send(new builder.Message(session)
                     .addAttachment(welcomeCard));                    
             }
-        //}        
+        }        
     ]));
 
     bot.dialog('/start',[
