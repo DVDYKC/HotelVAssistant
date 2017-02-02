@@ -27,8 +27,8 @@ module.exports = {
                         .attachmentLayout(builder.AttachmentLayout.carousel)
                         .attachments(roomTypes);
                     session.send(reply);
-                    //return session.endDialog();
-                    session.beginDialog('/start');
+                    return session.endDialog();
+                    //session.beginDialog('/start');
                 case 'See all promotions':
                     var promotions = getPromotionsAttachments();
                     var reply = new builder.Message(session)
