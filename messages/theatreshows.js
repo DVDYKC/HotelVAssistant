@@ -7,7 +7,7 @@ module.exports = {
         function (session) {
             builder.Prompts.choice(
                 session,
-                'Thank you for your interest in our shows at the Mastercard Theatres. How can we help you today?',
+                'Thank_MasterCard_Help',
                 ['Browse shows', 'Other Enquiry'],
                 {
                     maxRetries: 3,
