@@ -70,7 +70,7 @@ bot.dialog('/', new builder.IntentDialog()
     .onDefault([
         function (session) {
             console.log('Step1');
-            if(session.message.text.trim().toUpperCase() === 'START'){
+            if(session.message.text.trim().toUpperCase() === "START"){
                 console.log('Step2');
                 session.beginDialog('/start');
             }
@@ -89,11 +89,9 @@ bot.dialog('/', new builder.IntentDialog()
                 ]);
 
                 session.send(new builder.Message(session)
-                    .addAttachment(welcomeCard));
-                    
+                    .addAttachment(welcomeCard));                    
             }
-        }
-        
+        }        
     ]));
 
     bot.dialog('/start',[
