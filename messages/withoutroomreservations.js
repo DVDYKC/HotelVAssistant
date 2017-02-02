@@ -9,7 +9,7 @@ module.exports = {
         function (session) {
             builder.Prompts.choice(
                 session,
-                'Thank you for your interest in staying with us. What would you like to know today?',
+                'Thank_Stay_Know',
                 ['Rooms Types', 'See all promotions', 'Other', 'Back'],
                 {
                     maxRetries: 3,

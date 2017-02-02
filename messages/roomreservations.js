@@ -7,7 +7,7 @@ module.exports = {
         function (session) {
             builder.Prompts.confirm(
                 session,
-                'Do you have an existing and confirmed reservation with us?',
+                'Confirm_Reservation',
                 {
                     listStyle: builder.ListStyle.button
                 });
