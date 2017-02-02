@@ -85,7 +85,7 @@ bot.dialog('/', new builder.IntentDialog()
                 .addAttachment(welcomeCard));
                 
         },
-        function (session) {
+        function (session, result) {
             // prompt option
             builder.Prompts.choice(
                 session,
