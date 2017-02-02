@@ -54,6 +54,13 @@ bot.dialog('issrlmember', IsSRLMember.Dialog);
 bot.dialog('isnotsrlmember', IsNotSRLMember.Dialog);
 bot.dialog('enquiries', Enquiries.Dialog);
 
+// Configure bots default locale and locale folder path.
+bot.set('localizerSettings', {
+    botLocalePath: "./customLocale", 
+    defaultLocale: "en" 
+});
+
+
 // Root dialog
 // TODO: to start main hero card first before user message
 bot.dialog('/', new builder.IntentDialog()
@@ -70,8 +77,16 @@ bot.dialog('/', new builder.IntentDialog()
     .onDefault([
         function (session) {
             console.log('Step1');
-            if(session.message.text.trim().toUpperCase() == 'START'){
-                console.log('Step2');
+            if(session.message.text.trim().toUpperCase() == 'EN' || session.message.text.trim().toUpperCase() == 'CN'){
+                session.preferredLocale(session.message.text.trim().toUpperCase(), function (err) {
+                    if (!err) {
+                        // Locale files loaded
+                        session.endDialog('locale_updated');
+                    } else {
+                        // Problem loading the selected locale
+                        session.error(err);
+                    }
+                });
                 session.beginDialog('/start');
             }
             else {
@@ -100,7 +115,8 @@ bot.dialog('/', new builder.IntentDialog()
             // prompt option
             builder.Prompts.choice(
                 session,
-                'What can we help you with today? Please tap on one of the buttons below. Swipe right for more options.',
+                "greetings_response",
+                //'What can we help you with today? Please tap on one of the buttons below. Swipe right for more options.',
                 [RoomReservations.Label, TheatreShows.Label, Employment.Label, SRLMembership.Label],
                 {
                     maxRetries: 3,
