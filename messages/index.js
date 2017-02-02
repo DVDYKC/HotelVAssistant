@@ -57,7 +57,7 @@ bot.dialog('enquiries', Enquiries.Dialog);
 // Configure bots default locale and locale folder path.
 bot.set('localizerSettings', {
     botLocalePath: "./customLocale", 
-    defaultLocale: "EN" 
+    defaultLocale: "en" 
 });
 
 
@@ -77,8 +77,15 @@ bot.dialog('/', new builder.IntentDialog()
     .onDefault([
         function (session) {
             console.log('Step1');
-            if(session.message.text.trim() == 'en' || session.message.text.trim() == 'cn'){
-                session.preferredLocale(session.message.text.trim(), function (err) {
+            if(session.message.text.trim() == 'English' || session.message.text.trim() == '中文'){
+                var locale;
+                if(session.message.text.trim() == '中文'){
+                    locale = 'zh';
+                }
+                else {
+                    locale = 'en';
+                }
+                session.preferredLocale(locale, function (err) {
                     if (!err) {
                         // Locale files loaded
                         session.endDialog('locale_updated');
@@ -101,8 +108,8 @@ bot.dialog('/', new builder.IntentDialog()
                         .alt('MBS')
                 ])
                 .buttons([
-                    builder.CardAction.imBack(session, 'en', 'English'), 
-                    builder.CardAction.imBack(session, 'cn', '中文'),
+                    builder.CardAction.imBack(session, 'English', 'English'), 
+                    builder.CardAction.imBack(session, '中文', '中文'),
                 ]);
 
                 session.send(new builder.Message(session)
