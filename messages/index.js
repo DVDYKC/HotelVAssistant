@@ -57,7 +57,7 @@ bot.dialog('enquiries', Enquiries.Dialog);
 // Configure bots default locale and locale folder path.
 bot.set('localizerSettings', {
     botLocalePath: "./customLocale", 
-    defaultLocale: "en" 
+    defaultLocale: "EN" 
 });
 
 
