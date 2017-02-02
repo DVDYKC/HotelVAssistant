@@ -69,23 +69,32 @@ bot.dialog('/', new builder.IntentDialog()
     ])
     .onDefault([
         function (session) {
-            var welcomeCard = new builder.HeroCard(session)
-            .title('Warmest greetings!')
-            .text('We are happy to assist you with any enquiry! Please tap "Start" to begin')
-            .images([
-                new builder.CardImage(session)
-                    .url('http://www.marinabaysands.com/content/dam/singapore/marinabaysands/master/main/home/Navigation%20Images/MBSLogo-200x75px-newNav-v3.png')
-                    .alt('MBS')
-            ])
-            .buttons([
-                builder.CardAction.imBack(session, 'Start', 'Start'), 
-            ]);
+            if(session.message.text.trim().toUpperCase() === MainOptions.Shop.toUpperCase()){
+                session.beginDialog('/start');
+            }
+            else {
+                var welcomeCard = new builder.HeroCard(session)
+                .title('Warmest greetings!')
+                .text('We are happy to assist you with any enquiry! Please tap "Start" to begin')
+                .images([
+                    new builder.CardImage(session)
+                        .url('http://www.marinabaysands.com/content/dam/singapore/marinabaysands/master/main/home/Navigation%20Images/MBSLogo-200x75px-newNav-v3.png')
+                        .alt('MBS')
+                ])
+                .buttons([
+                    builder.CardAction.imBack(session, 'Start', 'Start'), 
+                ]);
 
-            session.send(new builder.Message(session)
-                .addAttachment(welcomeCard));
-                
-        },
-        function (session, result) {
+                session.send(new builder.Message(session)
+                    .addAttachment(welcomeCard));
+                    
+            }
+        }
+        
+    ]));
+
+    bot.dialog('/start',[
+        function (session) {
             // prompt option
             builder.Prompts.choice(
                 session,
@@ -123,4 +132,4 @@ bot.dialog('/', new builder.IntentDialog()
                     return session.beginDialog('srlmembership');
             }
         }
-    ]));
+    ]);
