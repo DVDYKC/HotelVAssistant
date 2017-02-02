@@ -13,9 +13,9 @@ var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure
 
 var bot = new builder.UniversalBot(connector);
 
-bot.dialog('/', function (session) {
+/*bot.dialog('/', function (session) {
     session.send('You said dd' + session.message.text);
-});
+});*/
 
 if (useEmulator) {
     var restify = require('restify');
@@ -27,3 +27,83 @@ if (useEmulator) {
 } else {
     module.exports = { default: connector.listen() }
 }
+
+// Dialogs
+var RoomReservations = require('./roomreservations');
+var WithRoomReservations = require('./withroomreservations');
+var WithoutRoomReservations = require('./withoutroomreservations');
+var TheatreShows = require('./theatreshows');
+var Employment = require('./employment');
+var IsEmployed = require('./isemployed');
+var IsNotEmployed = require('./isnotemployed');
+var SRLMembership = require('./srlmembership');
+var IsSRLMember = require('./issrlmember');
+var IsNotSRLMember = require('./isnotsrlmember');
+var Enquiries = require('./enquiries');
+
+// Setup dialogs
+bot.dialog('roomreservations', RoomReservations.Dialog);
+bot.dialog('withroomreservations', WithRoomReservations.Dialog);
+bot.dialog('withoutroomreservations', WithoutRoomReservations.Dialog);
+bot.dialog('theatreshows', TheatreShows.Dialog);
+bot.dialog('employment', Employment.Dialog);
+bot.dialog('isemployed', IsEmployed.Dialog);
+bot.dialog('isnotemployed', IsNotEmployed.Dialog);
+bot.dialog('srlmembership', SRLMembership.Dialog);
+bot.dialog('issrlmember', IsSRLMember.Dialog);
+bot.dialog('isnotsrlmember', IsNotSRLMember.Dialog);
+bot.dialog('enquiries', Enquiries.Dialog);
+
+// Root dialog
+// TODO: to start main hero card first before user message
+bot.dialog('/', new builder.IntentDialog()
+    .matchesAny([/help/i, /support/i, /problem/i], [
+        function (session) {
+            session.beginDialog('support');
+        },
+        function (session, result) {
+            var tickerNumber = result.response;
+            session.send('Thanks for contacting our support team. Your ticket number is %s.', tickerNumber);
+            session.endDialog();
+        }
+    ])
+    .onDefault([
+        function (session) {
+            // prompt option
+            builder.Prompts.choice(
+                session,
+                'What can we help you with today? Please tap on one of the buttons below. Swipe right for more options.',
+                [RoomReservations.Label, TheatreShows.Label, Employment.Label, SRLMembership.Label],
+                {
+                    maxRetries: 3,
+                    retryPrompt: 'Not a valid option',
+                    listStyle: builder.ListStyle.button
+                });
+        },
+        function (session, result) {
+            if (!result.response) {
+                // exhausted attemps and no selection, start over
+                session.send('Ooops! Too many attemps :( But don\'t worry, I\'m handling that exception and you can try again!');
+                return session.endDialog();
+            }
+
+            // on error, start over
+            session.on('error', function (err) {
+                session.send('Failed with message: %s', err.message);
+                session.endDialog();
+            });
+
+            // continue on proper dialog
+            var selection = result.response.entity;
+            switch (selection) {
+                case RoomReservations.Label:
+                    return session.beginDialog('roomreservations');
+                case TheatreShows.Label:
+                    return session.beginDialog('theatreshows');
+                case Employment.Label:
+                    return session.beginDialog('employment');
+                case SRLMembership.Label:
+                    return session.beginDialog('srlmembership');
+            }
+        }
+    ]));
