@@ -50,9 +50,9 @@ module.exports = {
 
 function getRoomTypesAttachments(session) {
 	
-	var contentType = 'image/png';
+	/*var contentType = 'image/png';
 	var bitmap = fs.readFileSync('./images/room1.png');	
-	var base64 = Buffer.from(bitmap).toString('base64');
+	var base64 = Buffer.from(bitmap).toString('base64');*/
 	// console.log(base64);
     return [
 		
@@ -61,8 +61,8 @@ function getRoomTypesAttachments(session) {
             .subtitle('39 square meters, plush, gold-and-earth toned furnishings in natural lighting.')
             .text('')
             .images([
-                //builder.CardImage.create(session, 'https://c2.staticflickr.com/8/7461/16236756261_2b915eb2aa_b.jpg')
-				builder.CardImage.create(session, util.format('data:%s;base64,%s', contentType , base64))
+                builder.CardImage.create(session, 'https://c2.staticflickr.com/8/7461/16236756261_2b915eb2aa_b.jpg')
+				//builder.CardImage.create(session, util.format('data:%s;base64,%s', contentType , base64))
             ])
             .buttons([
                 builder.CardAction.openUrl(session, 'https://booking.marinabaysands.com/booking/search', 'Check Availability'),
