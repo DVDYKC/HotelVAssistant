@@ -77,8 +77,8 @@ bot.dialog('/', new builder.IntentDialog()
     .onDefault([
         function (session) {
             console.log('Step1');
-            if(session.message.text.trim().toUpperCase() == 'EN' || session.message.text.trim().toUpperCase() == 'CN'){
-                session.preferredLocale(session.message.text.trim().toUpperCase(), function (err) {
+            if(session.message.text.trim() == 'en' || session.message.text.trim() == 'cn'){
+                session.preferredLocale(session.message.text.trim(), function (err) {
                     if (!err) {
                         // Locale files loaded
                         session.endDialog('locale_updated');
@@ -101,8 +101,8 @@ bot.dialog('/', new builder.IntentDialog()
                         .alt('MBS')
                 ])
                 .buttons([
-                    builder.CardAction.imBack(session, 'EN', 'English'), 
-                    builder.CardAction.imBack(session, 'CN', '中文'),
+                    builder.CardAction.imBack(session, 'en', 'English'), 
+                    builder.CardAction.imBack(session, 'cn', '中文'),
                 ]);
 
                 session.send(new builder.Message(session)
