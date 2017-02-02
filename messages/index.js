@@ -2,8 +2,8 @@
 var builder = require("botbuilder");
 var botbuilder_azure = require("botbuilder-azure");
 
-var useEmulator = (process.env.NODE_ENV == 'development');
-
+//var useEmulator = (process.env.NODE_ENV == 'development');
+var useEmulator = true;
 var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure.BotServiceConnector({
     appId: process.env['MicrosoftAppId'],
     appPassword: process.env['MicrosoftAppPassword'],
@@ -56,7 +56,6 @@ bot.dialog('enquiries', Enquiries.Dialog);
 
 // Configure bots default locale and locale folder path.
 bot.set('localizerSettings', {
-    botLocalePath: "./customLocale", 
     defaultLocale: "en" 
 });
 
@@ -122,10 +121,10 @@ bot.dialog('/', new builder.IntentDialog()
         function (session) {
             // prompt option
             var options = session.localizer.gettext(session.preferredLocale(), "greetings_response");
+            console.log(options);
             builder.Prompts.choice(
                 session,
                 "greetings_response",
-                options,
                 //'What can we help you with today? Please tap on one of the buttons below. Swipe right for more options.',
                 [RoomReservations.Label, TheatreShows.Label, Employment.Label, SRLMembership.Label],
                 {

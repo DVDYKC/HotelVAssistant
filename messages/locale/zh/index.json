@@ -1,5 +1,5 @@
 {
-    "greetings_response": "Prompts.choice(): 我们在哪一个方面可以提供更多信息 ？请点击下面的其中一个按钮, 向右滑动即可查看更多选项。",
+    "greetings_response": "我们在哪一个方面可以提供更多信息 ？请点击下面的其中一个按钮, 向右滑动即可查看更多选项。",
     "greeting": ["Welcome to the localization sample bot.", "Hey there. I'm the localization sample bot.", "Greetings... I'm the localization sample bot."],
     "instructions": "This demo will first ask you to select a preferred language and then walk through using all of the built-in prompts in that language.",
     "locale_prompt": "What's your preferred language?",
