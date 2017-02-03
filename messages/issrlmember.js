@@ -5,10 +5,11 @@ module.exports = {
     Dialog: [
         // Room reservation confirmation ID
         function (session) {
+            var options = session.localizer.gettext(session.preferredLocale(), "IsSRLMember_InterestedArea_Prompt");
             builder.Prompts.choice(
                 session,
                 'IsSRLMember_InterestedArea',
-                ['Membership Points', 'SRL Discount Outlets', 'How to earn & redeem', 'Other Enquiries'],
+                options,
                 {
                     maxRetries: 3,
                     retryPrompt: 'Not a valid option',
