@@ -23,5 +23,6 @@
     "WithRoomReservations_Confirmation_ID": "请输入客房预订确认信息",
     "WithRoomReservations_Leave_Msg": "请输入客房预订确认信息",
     "All_Yes_No": "是|不是",
-    "Index_Menu": "客房预订|剧院表演|求职|时尚会员计划"
+    "Index_Menu": "客房预订|剧院表演|求职|时尚会员计划",
+    "WithoutRoomReservations_Know_Prompt": "查看房型|查看所有促销|其他|回到主目录"
 }

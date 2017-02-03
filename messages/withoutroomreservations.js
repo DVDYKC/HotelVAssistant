@@ -7,10 +7,11 @@ module.exports = {
     Dialog: [
         // Known enquiries
         function (session) {
+            var options = session.localizer.gettext(session.preferredLocale(), "WithoutRoomReservations_Know_Prompt");
             builder.Prompts.choice(
                 session,
                 'Thank_Stay_Know',
-                ['Rooms Types', 'See all promotions', 'Other', 'Back'],
+                options,
                 {
                     maxRetries: 3,
                     retryPrompt: 'Not a valid option',
@@ -39,6 +40,25 @@ module.exports = {
                 case 'Other':
                     return session.beginDialog('enquiries');
                 case 'Back':
+                    return session.beginDialog('/start'); //TODO: to start onDefault of root dialog
+                case '查看房型':
+                    var roomTypes = getRoomTypesAttachments();
+                    var reply = new builder.Message(session)
+                        .attachmentLayout(builder.AttachmentLayout.carousel)
+                        .attachments(roomTypes);
+                    session.send(reply);
+                    return session.endDialog();
+                    //session.beginDialog('/start');
+                case '查看所有促销':
+                    var promotions = getPromotionsAttachments();
+                    var reply = new builder.Message(session)
+                        .attachmentLayout(builder.AttachmentLayout.carousel)
+                        .attachments(promotions);
+                    session.send(reply);
+                    return session.endDialog();
+                case '其他':
+                    return session.beginDialog('enquiries');
+                case '回到主目录':
                     return session.beginDialog('/start'); //TODO: to start onDefault of root dialog
             }           
         }
