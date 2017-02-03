@@ -22,5 +22,6 @@
     "WithRoomReservations_Question": "感谢您与我们联系。请回答以下问题几个问题，以便我们提供更好的服务。",
     "WithRoomReservations_Confirmation_ID": "请输入客房预订确认信息",
     "WithRoomReservations_Leave_Msg": "请输入客房预订确认信息",
-    "All_Yes_No": "是|不是"
+    "All_Yes_No": "是|不是",
+    "Index_Menu": "客房预订|剧院表演|求职|时尚会员计划"
 }

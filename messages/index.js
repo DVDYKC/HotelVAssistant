@@ -121,13 +121,13 @@ bot.dialog('/', new builder.IntentDialog()
     bot.dialog('/start',[
         function (session) {
             // prompt option
-            // var options = session.localizer.gettext(session.preferredLocale(), "greetings_response");
+            var options = session.localizer.gettext(session.preferredLocale(), "Index_Menu");
             // console.log(options);
             builder.Prompts.choice(
                 session,
                 "greetings_response",
                 //'What can we help you with today? Please tap on one of the buttons below. Swipe right for more options.',
-                [RoomReservations.Label, TheatreShows.Label, Employment.Label, SRLMembership.Label],
+                options,
                 {
                     maxRetries: 3,
                     retryPrompt: 'Not a valid option',
@@ -157,6 +157,14 @@ bot.dialog('/', new builder.IntentDialog()
                 case Employment.Label:
                     return session.beginDialog('employment');
                 case SRLMembership.Label:
+                    return session.beginDialog('srlmembership');
+                case "客房预订":
+                    return session.beginDialog('roomreservations');
+                case "剧院表演":
+                    return session.beginDialog('theatreshows');
+                case "求职":
+                    return session.beginDialog('employment');
+                case "时尚会员计划":
                     return session.beginDialog('srlmembership');
             }
         }
