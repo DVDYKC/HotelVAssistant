@@ -21,5 +21,6 @@
     "SRLMembership_Member": "您是Sands Rewards Lifestyle会员吗？",
     "WithRoomReservations_Question": "感谢您与我们联系。请回答以下问题几个问题，以便我们提供更好的服务。",
     "WithRoomReservations_Confirmation_ID": "请输入客房预订确认信息",
-    "WithRoomReservations_Leave_Msg": "请输入客房预订确认信息"
+    "WithRoomReservations_Leave_Msg": "请输入客房预订确认信息",
+    "All_Yes_No": "是|不是"
 }
