@@ -7,7 +7,7 @@ module.exports = {
         function (session) {
             builder.Prompts.choice(
                 session,
-                'Thank you for your interest to be part of the Marina Bay Sands family. Please indicate your area of interest.',
+                'IsNotEmployed_InterestedArea',
                 ['Casino', 'Housekeeping', 'F&B Operations', 'Other Professions'],
                 {
                     maxRetries: 3,
@@ -21,7 +21,7 @@ module.exports = {
             //return session.endDialog();
             builder.Prompts.choice(
                 session,
-                'Please send your resume/CV to recruitment@marinabaysands.com stating the position you are interested in. Kindly note that only shortlisted candidates will be contacted. Thank you.',
+                'IsNotEmployed_CV',
                 ['Home'],
                 {
                     maxRetries: 3,

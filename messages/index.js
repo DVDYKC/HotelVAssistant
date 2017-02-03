@@ -101,7 +101,7 @@ bot.dialog('/', new builder.IntentDialog()
                 console.log('Step3');
                 var welcomeCard = new builder.HeroCard(session)
                 .title('Warmest greetings!')
-                .text('We are happy to assist you with any enquiry! Please tap "Start" to begin')
+                .text('We are happy to assist you with any enquiry! Please select a language to begin')
                 .images([
                     new builder.CardImage(session)
                         .url('http://logos-download.com/wp-content/uploads/2016/05/Marina_Bay_Sands_logo_small.png')

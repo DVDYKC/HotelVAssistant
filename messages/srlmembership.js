@@ -7,7 +7,7 @@ module.exports = {
         function (session) {
             builder.Prompts.confirm(
                 session,
-                'Are you an existing Sands Rewards Lifestyle member?',
+                'SRLMembership_Member',
                 {
                     listStyle: builder.ListStyle.button
                 });

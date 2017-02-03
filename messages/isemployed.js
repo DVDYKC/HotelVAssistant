@@ -5,7 +5,7 @@ module.exports = {
     Dialog: [
         // Room reservation confirmation ID
         function (session) {
-            builder.Prompts.text(session, 'Please enter the name of your family member or relative working at Marina Bay Sands.');
+            builder.Prompts.text(session, 'IsEmployed_FamilyMember');
         },
         function (session, results, next) {
             session.dialogData.employeename = results.response;
@@ -14,7 +14,7 @@ module.exports = {
 
         // Enquiry
         function (session) {
-            builder.Prompts.text(session, 'Please enter your email address.');
+            builder.Prompts.text(session, 'IsEmployed_EmailAddress');
         },
         function (session, results, next) {
             session.dialogData.email = results.response;

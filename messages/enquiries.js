@@ -5,7 +5,7 @@ module.exports = {
     Dialog: [
         // Email
         function (session) {
-            builder.Prompts.text(session, 'Please enter your email address first so we can follow up with your inquiry.');
+            builder.Prompts.text(session, 'Enquiries_EmailAddress');
         },
         function (session, results, next) {
             session.dialogData.email = results.response;
@@ -14,7 +14,7 @@ module.exports = {
 
         // Enquiry
         function (session) {
-            builder.Prompts.text(session, 'Now enter your inquiry here and we will get back to you as soon as possible!');
+            builder.Prompts.text(session, 'Enquiries_EnterEnquiry');
         },
         function (session, results, next) {
             session.dialogData.enquiry = results.response;

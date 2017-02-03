@@ -5,8 +5,8 @@ module.exports = {
     Dialog: [
         // Room reservation confirmation ID
         function (session) {
-            session.send('Thanks for staying with us. Just a few questions to help us serve you better.');
-            builder.Prompts.text(session, 'Please enter your room reservation confirmation ID.');
+            session.send('WithRoomReservations_Question');
+            builder.Prompts.text(session, 'WithRoomReservations_Confirmation_ID');
         },
         function (session, results, next) {
             session.dialogData.confirmationid = results.response;
@@ -15,7 +15,7 @@ module.exports = {
 
         // Enquiry
         function (session) {
-            builder.Prompts.text(session, 'What can we assist you with? Leave us a message and we will get back to you as soon as possible.');
+            builder.Prompts.text(session, 'WithRoomReservations_Leave_Msg');
         },
         function (session, results, next) {
             session.dialogData.enquiry = results.response;

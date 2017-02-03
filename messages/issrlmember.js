@@ -7,7 +7,7 @@ module.exports = {
         function (session) {
             builder.Prompts.choice(
                 session,
-                'Thank you for your interest to be part of the Marina Bay Sands family. Please indicate your area of interest.',
+                'IsSRLMember_InterestedArea',
                 ['Membership Points', 'SRL Discount Outlets', 'How to earn & redeem', 'Other Enquiries'],
                 {
                     maxRetries: 3,
@@ -23,7 +23,7 @@ module.exports = {
 
         // SRL Membership ID
         function (session) {
-            builder.Prompts.text(session, 'Please enter your Sands Rewards Lifestyle membership ID.');
+            builder.Prompts.text(session, 'IsSRLMember_SRL_ID');
         },
         function (session, results, next) {
             session.dialogData.srlmembershipid = results.response;
@@ -32,7 +32,7 @@ module.exports = {
 
         // Preferred contact
         function (session) {
-            builder.Prompts.text(session, 'Please enter your preferred contact number.');
+            builder.Prompts.text(session, 'IsSRLMember_Contact_No');
         },
         function (session, results, next) {
             session.dialogData.contact = results.response;
@@ -41,7 +41,7 @@ module.exports = {
 
         // Preferred contact
         function (session) {
-            builder.Prompts.text(session, 'Please enter your inquiry here and we will get back to you as soon as possible!');
+            builder.Prompts.text(session, 'IsSRLMember_Enquiry');
         },
         function (session, results, next) {
             session.dialogData.enquiry = results.response;

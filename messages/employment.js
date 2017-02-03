@@ -7,7 +7,7 @@ module.exports = {
         function (session) {
             builder.Prompts.confirm(
                 session,
-                'Are any of your family members or relatives currently employed by Marina Bay Sands?',
+                'Employement_FamilyMember',
                 {
                     listStyle: builder.ListStyle.button
                 });
