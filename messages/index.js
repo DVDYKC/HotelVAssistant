@@ -121,8 +121,8 @@ bot.dialog('/', new builder.IntentDialog()
     bot.dialog('/start',[
         function (session) {
             // prompt option
-            var options = session.localizer.gettext(session.preferredLocale(), "greetings_response");
-            console.log(options);
+            // var options = session.localizer.gettext(session.preferredLocale(), "greetings_response");
+            // console.log(options);
             builder.Prompts.choice(
                 session,
                 "greetings_response",

@@ -5,10 +5,11 @@ module.exports = {
     Dialog: [
         // Confirm check-in
         function (session) {
+            var options = session.localizer.gettext(session.preferredLocale(), "IsNotEmployed_InterestedArea_Prompt");
             builder.Prompts.choice(
                 session,
                 'IsNotEmployed_InterestedArea',
-                ['Casino', 'Housekeeping', 'F&B Operations', 'Other Professions'],
+                [options],
                 {
                     maxRetries: 3,
                     retryPrompt: 'Not a valid option',
