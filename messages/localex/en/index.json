@@ -10,7 +10,7 @@
     "IsEmployed_FamilyMember": "Please enter the name of your family member or relative working at Marina Bay Sands.",
     "IsEmployed_EmailAddress": "Please enter your email address.",
     "IsNotEmployed_InterestedArea": "Thank you for your interest to be part of the Marina Bay Sands family. Please indicate your area of interest.",
-    "IsNotEmployed_InterestedArea_Prompt": "'Casino', 'Housekeeping', 'F&B Operations', 'Other Professions'",
+    "IsNotEmployed_InterestedArea_Prompt": "Casino|Housekeeping|F&B Operations|Other Professions",
     "IsNotEmployed_CV": "Please send your resume/CV to recruitment@marinabaysands.com stating the position you are interested in. Kindly note that only shortlisted candidates will be contacted. Thank you.",
     "IsNotEmployed_Home": "Home",
     "IsSRLMember_InterestedArea": "Thank you for your interest to be part of the Marina Bay Sands family. Please indicate your area of interest.",

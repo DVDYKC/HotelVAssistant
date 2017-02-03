@@ -9,7 +9,7 @@ module.exports = {
             builder.Prompts.choice(
                 session,
                 'IsNotEmployed_InterestedArea',
-                [options],
+                options,
                 {
                     maxRetries: 3,
                     retryPrompt: 'Not a valid option',
