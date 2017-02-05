@@ -85,7 +85,7 @@ function getRoomTypesAttachments(session) {
             .subtitle('WithoutRoomReservations_Room_39')
             .text('')
             .images([
-                builder.CardImage.create(session, 'https://c2.staticflickr.com/8/7461/16236756261_2b915eb2aa_b.jpg')
+                builder.CardImage.create(session, 'http://hk.marinabaysands.com/content/dam/singapore/marinabaysands/master/main/home/hotel/web%20redesign%20room%20images/Deluxe%20Room/Deluxe%20City%20500X454.jpg')
 				//builder.CardImage.create(session, util.format('data:%s;base64,%s', contentType , base64))
             ])
             .buttons([
