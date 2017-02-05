@@ -60,7 +60,18 @@ module.exports = {
                     return session.beginDialog('enquiries');
                 case '回到主目录':
                     return session.beginDialog('/start'); //TODO: to start onDefault of root dialog
-            }           
+            }
+            var options = session.localizer.gettext(session.preferredLocale(), "Main_Menu");
+            builder.Prompts.choice(
+                session,
+                'IsNotEmployed_CV',
+                options,
+                {
+                    maxRetries: 3,
+                    retryPrompt: 'Not a valid option',
+                    listStyle: builder.ListStyle.button
+                }
+            );           
         }
     ]
 };

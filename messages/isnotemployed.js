@@ -20,10 +20,11 @@ module.exports = {
         function (session, results) {
             //session.send('Please send your resume/CV to recruitment@marinabaysands.com stating the position you are interested in. Kindly note that only shortlisted candidates will be contacted. Thank you.');
             //return session.endDialog();
+            var options = session.localizer.gettext(session.preferredLocale(), "Main_Menu");
             builder.Prompts.choice(
                 session,
                 'IsNotEmployed_CV',
-                ['Home'],
+                options,
                 {
                     maxRetries: 3,
                     retryPrompt: 'Not a valid option',
