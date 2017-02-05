@@ -23,7 +23,7 @@ module.exports = {
             var selection = results.response.entity;            
             switch (selection) {
                 case 'Rooms Types':
-                    var roomTypes = getRoomTypesAttachments();
+                    var roomTypes = getRoomTypesAttachments(session);
                     var reply = new builder.Message(session)
                         .attachmentLayout(builder.AttachmentLayout.carousel)
                         .attachments(roomTypes);
@@ -31,7 +31,7 @@ module.exports = {
                     return session.endDialog();
                     //session.beginDialog('/start');
                 case 'See all promotions':
-                    var promotions = getPromotionsAttachments();
+                    var promotions = getPromotionsAttachments(session);
                     var reply = new builder.Message(session)
                         .attachmentLayout(builder.AttachmentLayout.carousel)
                         .attachments(promotions);
@@ -42,7 +42,7 @@ module.exports = {
                 case 'Back':
                     return session.beginDialog('/start'); //TODO: to start onDefault of root dialog
                 case '查看房型':
-                    var roomTypes = getRoomTypesAttachments();
+                    var roomTypes = getRoomTypesAttachments(session);
                     var reply = new builder.Message(session)
                         .attachmentLayout(builder.AttachmentLayout.carousel)
                         .attachments(roomTypes);
@@ -50,7 +50,7 @@ module.exports = {
                     return session.endDialog();
                     //session.beginDialog('/start');
                 case '查看所有促销':
-                    var promotions = getPromotionsAttachments();
+                    var promotions = getPromotionsAttachments(session);
                     var reply = new builder.Message(session)
                         .attachmentLayout(builder.AttachmentLayout.carousel)
                         .attachments(promotions);
@@ -71,78 +71,85 @@ function getRoomTypesAttachments(session) {
 	var bitmap = fs.readFileSync('./images/room1.png');	
 	var base64 = Buffer.from(bitmap).toString('base64');*/
 	// console.log(base64);
+    //var WithoutRoomReservations_Room_39 = session.localizer.gettext(session.preferredLocale(), "WithoutRoomReservations_Room_39");
+    //var WithoutRoomReservations_Room_47 = session.localizer.gettext(session.preferredLocale(), "WithoutRoomReservations_Room_47");
+    //var WithoutRoomReservations_Room_86 = session.localizer.gettext(session.preferredLocale(), "WithoutRoomReservations_Room_86");
+    //var WithoutRoomReservations_Room_61 = session.localizer.gettext(session.preferredLocale(), "WithoutRoomReservations_Room_61");
+    //var WithoutRoomReservations_Room_79 = session.localizer.gettext(session.preferredLocale(), "WithoutRoomReservations_Room_79");
+    //var WithoutRoomReservations_Room_More = session.localizer.gettext(session.preferredLocale(), "WithoutRoomReservations_Room_More");
+    //var WithoutRoomReservations_Room_More = session.localizer.gettext(session.preferredLocale(), "WithoutRoomReservations_Room_More");
     return [
 		
         new builder.HeroCard(session)
-            .title('Deluxe Room')
-            .subtitle('39 square meters, plush, gold-and-earth toned furnishings in natural lighting.')
+            .title('WithoutRoomReservations_39')
+            .subtitle('WithoutRoomReservations_Room_39')
             .text('')
             .images([
                 builder.CardImage.create(session, 'https://c2.staticflickr.com/8/7461/16236756261_2b915eb2aa_b.jpg')
 				//builder.CardImage.create(session, util.format('data:%s;base64,%s', contentType , base64))
             ])
             .buttons([
-                builder.CardAction.openUrl(session, 'https://booking.marinabaysands.com/booking/search', 'Check Availability'),
-                builder.CardAction.openUrl(session, 'http://www.marinabaysands.com/mbs/rooms-suites/deluxe-room.html', 'Room Details')
+                builder.CardAction.openUrl(session, 'https://booking.marinabaysands.com/booking/search', 'WithoutRoomReservations_Check_Availability'),
+                builder.CardAction.openUrl(session, 'http://www.marinabaysands.com/mbs/rooms-suites/deluxe-room.html', 'WithoutRoomReservations_Room_Details')
             ]),
         
         new builder.HeroCard(session)
-            .title('Premier Room')
-            .subtitle('42 square meters, bathroom with glass-enclosed shower and deep-soaking bathtub.')
+            .title('WithoutRoomReservations_47')
+            .subtitle('WithoutRoomReservations_Room_47')
             .text('')
             .images([
                 builder.CardImage.create(session, 'https://c2.staticflickr.com/8/7461/16236756261_2b915eb2aa_b.jpg')
             ])
             .buttons([
-                builder.CardAction.openUrl(session, 'https://booking.marinabaysands.com/booking/search', 'Check Availability'),
-                builder.CardAction.openUrl(session, 'http://www.marinabaysands.com/hotel/rooms-suites/premier-room.html', 'Room Details')
+                builder.CardAction.openUrl(session, 'https://booking.marinabaysands.com/booking/search', 'WithoutRoomReservations_Check_Availability'),
+                builder.CardAction.openUrl(session, 'http://www.marinabaysands.com/hotel/rooms-suites/premier-room.html', 'WithoutRoomReservations_Room_Details')
             ]),
 
         new builder.HeroCard(session)
-            .title('Family Room')
-            .subtitle('86 square meters, nespresso machine, furnished balcony with garden view.')
+            .title('WithoutRoomReservations_86')
+            .subtitle('WithoutRoomReservations_Room_86')
             .text('')
             .images([
                 builder.CardImage.create(session, 'https://c2.staticflickr.com/8/7461/16236756261_2b915eb2aa_b.jpg')
             ])
             .buttons([
-                builder.CardAction.openUrl(session, 'https://booking.marinabaysands.com/booking/search', 'Check Availability'),
-                builder.CardAction.openUrl(session, 'http://www.marinabaysands.com/hotel/rooms-suites/family-room.html', 'Room Details')
+                builder.CardAction.openUrl(session, 'https://booking.marinabaysands.com/booking/search', 'WithoutRoomReservations_Check_Availability'),
+                builder.CardAction.openUrl(session, 'http://www.marinabaysands.com/hotel/rooms-suites/family-room.html', 'WithoutRoomReservations_Room_Details')
             ]),
 
         new builder.HeroCard(session)
-            .title('The Club Room')
-            .subtitle('61 square meters, exclusive access to Club55 lounge on the 55th floor.')
+            .title('WithoutRoomReservations_61')
+            .subtitle('WithoutRoomReservations_Room_61')
             .text('')
             .images([
                 builder.CardImage.create(session, 'https://c2.staticflickr.com/8/7461/16236756261_2b915eb2aa_b.jpg')
             ])
             .buttons([
-                builder.CardAction.openUrl(session, 'https://booking.marinabaysands.com/booking/search', 'Check Availability'),
-                builder.CardAction.openUrl(session, 'http://www.marinabaysands.com/hotel/rooms-suites/club-room.html', 'Room Details')
+                builder.CardAction.openUrl(session, 'https://booking.marinabaysands.com/booking/search', 'WithoutRoomReservations_Check_Availability'),
+                builder.CardAction.openUrl(session, 'http://www.marinabaysands.com/hotel/rooms-suites/club-room.html', 'WithoutRoomReservations_Room_Details')
             ]),
 
         new builder.HeroCard(session)
-            .title('Grand Club Room')
-            .subtitle('79 square meters of everything the Club Room offers and more.')
+            .title('WithoutRoomReservations_79')
+            .subtitle('WithoutRoomReservations_Room_79')
             .text('')
             .images([
                 builder.CardImage.create(session, 'https://c2.staticflickr.com/8/7461/16236756261_2b915eb2aa_b.jpg')
             ])
             .buttons([
-                builder.CardAction.openUrl(session, 'https://booking.marinabaysands.com/booking/search', 'Check Availability'),
-                builder.CardAction.openUrl(session, 'http://www.marinabaysands.com/hotel/rooms-suites/grand-club-room.html', 'Room Details')
+                builder.CardAction.openUrl(session, 'https://booking.marinabaysands.com/booking/search', 'WithoutRoomReservations_Check_Availability'),
+                builder.CardAction.openUrl(session, 'http://www.marinabaysands.com/hotel/rooms-suites/grand-club-room.html', 'WithoutRoomReservations_Room_Details')
             ]),
 
         new builder.HeroCard(session)
-            .title('Need more space? Check out our suites.')
-            .subtitle('First class amenities, the crown jewels of Marina Bay Sands.')
+            .title('WithoutRoomReservations_More')
+            .subtitle('WithoutRoomReservations_Room_More')
             .text('')
             .images([
                 builder.CardImage.create(session, 'https://c2.staticflickr.com/8/7461/16236756261_2b915eb2aa_b.jpg')
             ])
             .buttons([
-                builder.CardAction.openUrl(session, 'http://www.marinabaysands.com/hotel/rooms-suites/suites.html', 'View All Suites')
+                builder.CardAction.openUrl(session, 'http://www.marinabaysands.com/hotel/rooms-suites/suites.html', 'WithoutRoomReservations_View_All_Suites')
             ])
     ];
 }
