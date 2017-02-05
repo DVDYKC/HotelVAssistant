@@ -28,6 +28,7 @@ module.exports = {
                         .attachmentLayout(builder.AttachmentLayout.carousel)
                         .attachments(roomTypes);
                     session.send(reply);
+                    break;
                     //return session.endDialog();
                     //session.beginDialog('/start');
                 case 'See all promotions':
@@ -36,6 +37,7 @@ module.exports = {
                         .attachmentLayout(builder.AttachmentLayout.carousel)
                         .attachments(promotions);
                     session.send(reply);
+                    break;
                     //return session.endDialog();
                 case 'Other':
                     return session.beginDialog('enquiries');
@@ -47,6 +49,7 @@ module.exports = {
                         .attachmentLayout(builder.AttachmentLayout.carousel)
                         .attachments(roomTypes);
                     session.send(reply);
+                    break;
                     //return session.endDialog();
                     //session.beginDialog('/start');
                 case '查看所有促销':
@@ -55,6 +58,7 @@ module.exports = {
                         .attachmentLayout(builder.AttachmentLayout.carousel)
                         .attachments(promotions);
                     session.send(reply);
+                    break;
                     //return session.endDialog();
                 case '其他':
                     return session.beginDialog('enquiries');
