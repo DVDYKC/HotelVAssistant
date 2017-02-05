@@ -98,7 +98,7 @@ function getRoomTypesAttachments(session) {
             .subtitle('WithoutRoomReservations_Room_47')
             .text('')
             .images([
-                builder.CardImage.create(session, 'https://c2.staticflickr.com/8/7461/16236756261_2b915eb2aa_b.jpg')
+                builder.CardImage.create(session, 'http://www.marinabaysands.com/content/dam/singapore/marinabaysands/master/main/home/hotel/web%20redesign%20room%20images/Premier%20Room/premier-room-twin-city-500x454.jpg')
             ])
             .buttons([
                 builder.CardAction.openUrl(session, 'https://booking.marinabaysands.com/booking/search', 'WithoutRoomReservations_Check_Availability'),
@@ -110,7 +110,7 @@ function getRoomTypesAttachments(session) {
             .subtitle('WithoutRoomReservations_Room_86')
             .text('')
             .images([
-                builder.CardImage.create(session, 'https://c2.staticflickr.com/8/7461/16236756261_2b915eb2aa_b.jpg')
+                builder.CardImage.create(session, 'http://www.marinabaysands.com/content/dam/singapore/marinabaysands/master/main/home/hotel/web%20redesign%20room%20images/Family%20Room/family-room-500x454.jpg')
             ])
             .buttons([
                 builder.CardAction.openUrl(session, 'https://booking.marinabaysands.com/booking/search', 'WithoutRoomReservations_Check_Availability'),
@@ -122,7 +122,7 @@ function getRoomTypesAttachments(session) {
             .subtitle('WithoutRoomReservations_Room_61')
             .text('')
             .images([
-                builder.CardImage.create(session, 'https://c2.staticflickr.com/8/7461/16236756261_2b915eb2aa_b.jpg')
+                builder.CardImage.create(session, 'http://www.marinabaysands.com/content/dam/singapore/marinabaysands/master/main/home/hotel/web%20redesign%20room%20images/Club%20Room/club-king-city-500x454.jpg')
             ])
             .buttons([
                 builder.CardAction.openUrl(session, 'https://booking.marinabaysands.com/booking/search', 'WithoutRoomReservations_Check_Availability'),
@@ -134,7 +134,7 @@ function getRoomTypesAttachments(session) {
             .subtitle('WithoutRoomReservations_Room_79')
             .text('')
             .images([
-                builder.CardImage.create(session, 'https://c2.staticflickr.com/8/7461/16236756261_2b915eb2aa_b.jpg')
+                builder.CardImage.create(session, 'http://www.marinabaysands.com/content/dam/singapore/marinabaysands/master/main/home/hotel/web%20redesign%20room%20images/Grand%20Club%20Room/grand-club-city-500x454.jpg')
             ])
             .buttons([
                 builder.CardAction.openUrl(session, 'https://booking.marinabaysands.com/booking/search', 'WithoutRoomReservations_Check_Availability'),
