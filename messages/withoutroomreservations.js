@@ -68,7 +68,7 @@ module.exports = {
             var options = session.localizer.gettext(session.preferredLocale(), "Main_Menu");
             builder.Prompts.choice(
                 session,
-                'IsNotEmployed_CV',
+                '',
                 options,
                 {
                     maxRetries: 3,
