@@ -28,7 +28,7 @@ module.exports = {
                         .attachmentLayout(builder.AttachmentLayout.carousel)
                         .attachments(roomTypes);
                     session.send(reply);
-                    return session.endDialog();
+                    //return session.endDialog();
                     //session.beginDialog('/start');
                 case 'See all promotions':
                     var promotions = getPromotionsAttachments(session);
@@ -36,7 +36,7 @@ module.exports = {
                         .attachmentLayout(builder.AttachmentLayout.carousel)
                         .attachments(promotions);
                     session.send(reply);
-                    return session.endDialog();
+                    //return session.endDialog();
                 case 'Other':
                     return session.beginDialog('enquiries');
                 case 'Back':
@@ -47,7 +47,7 @@ module.exports = {
                         .attachmentLayout(builder.AttachmentLayout.carousel)
                         .attachments(roomTypes);
                     session.send(reply);
-                    return session.endDialog();
+                    //return session.endDialog();
                     //session.beginDialog('/start');
                 case '查看所有促销':
                     var promotions = getPromotionsAttachments(session);
@@ -55,7 +55,7 @@ module.exports = {
                         .attachmentLayout(builder.AttachmentLayout.carousel)
                         .attachments(promotions);
                     session.send(reply);
-                    return session.endDialog();
+                    //return session.endDialog();
                 case '其他':
                     return session.beginDialog('enquiries');
                 case '回到主目录':
@@ -71,7 +71,8 @@ module.exports = {
                     retryPrompt: 'Not a valid option',
                     listStyle: builder.ListStyle.button
                 }
-            );           
+            );
+            return session.endDialog();           
         }
     ]
 };
