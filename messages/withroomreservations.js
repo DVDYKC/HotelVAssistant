@@ -18,8 +18,8 @@ module.exports = {
             builder.Prompts.text(session, 'WithRoomReservations_Leave_Msg');
         },
         function (session, results, next) {
-            session.dialogData.enquiry = results.response;
-            session.send('%s asked: %s', session.dialogData.confirmationid, session.dialogData.enquiry);
+            //session.dialogData.enquiry = results.response;
+            //session.send('%s asked: %s', session.dialogData.confirmationid, session.dialogData.enquiry);
             session.endDialog();
         }
     ]
